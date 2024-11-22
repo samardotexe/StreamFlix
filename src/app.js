@@ -30,7 +30,7 @@ import { errorHandler } from "./middlewears/error.middlewears.js"
 //routes 
 
 app.use("/api/v1/healthcheck", healthCheckRouter)
-app.use("/api.v1/users",userRouter)
+app.use("/api.v1/users",userRoutes)
 
 
 

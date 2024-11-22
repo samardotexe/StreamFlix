@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 //db_name stored in constants.js
-import { DB_NAME } from "../constants.js"
 
 
 
