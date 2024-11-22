@@ -1,0 +1,11 @@
+.env
+.env.sample
+.prettierignore
+node_modules
+/.vscode
+/node_modules
+/.dist
+
+*.env
+.env
+env.*
