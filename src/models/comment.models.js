@@ -1,49 +1,21 @@
 import mongoose, {Schema}  from "mongoose"
 import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
+
+//commentSchema using ER Diagram
 const commentSchema = new Schema(
     {
-        username: {
+        content:{
             type: String,
-            required: true,
-            unique: true,
-            lowercase: true,
-            trim: true,
-            index: true,
+            required: true
         },
-        email: {
-            type: String,
-            required: true,
-            unique: true,
-            lowercase: true,
-            trim: true,
+        video : {
+            type: Schema.Types.ObjectId,
+            ref: "Video"
         },
-        fullname: {
-            type: String,
-            required: true,
-            lowercase: true,
-            trim: true,
-            index: true,
-        },
-        avatar: {
-            type: String,
-            required: true,
-        },
-        coverImage: {
-            type: String,
-        },
-        watchHistory: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "Video"
-            }
-        ],
-        password: {
-            type: String,
-            required: [true, "password is required"]
-        },
-        refreshToken: {
-            type: String,
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
         }
     },
     { timestamps: true }
@@ -52,4 +24,4 @@ const commentSchema = new Schema(
 commentSchema.plugin(mongooseAggregatePaginate)
 
 
-export const User = mongoose.model("User", commentSchema)
+export const User = mongoose.model("Comment", commentSchema)

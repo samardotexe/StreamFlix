@@ -1,3 +1,4 @@
+//api response which respondes all req,res
 class ApiResponse{
     constructor(statusCode, data, message = "Success"){
         this.statusCode = statusCode
@@ -7,4 +8,4 @@ class ApiResponse{
     }
 }
 
-export { ApiResponse}
+export { ApiResponse }

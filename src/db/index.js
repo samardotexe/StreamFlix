@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 //db_name stored in constants.js
 
-
-
 //connecting db with try and catch
 const connectDB = async () => {
     try {
